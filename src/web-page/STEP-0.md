@@ -44,7 +44,7 @@
 
 ※アタリ画像
 
-![img_7.png](img_7.png)
+![sample](img/sample.jpg)
 
 ## 環境
 
