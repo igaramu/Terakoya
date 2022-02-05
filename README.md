@@ -32,9 +32,12 @@ $ npm run generate
 ## Use Library
 
 - [markdown-it](https://github.com/markdown-it/markdown-it)
-  npm add @nuxtjs/markdownit npm install highlight.js npm install markdown-it-emoji
+  `npm add @nuxtjs/markdownit npm install highlight.js npm install markdown-it-emoji`
 - nuxt-buefy
 - sass-loader node-sass
+
+### 参考
+markdown-it：https://techblog.roxx.co.jp/entry/2019/01/24/190000
 
 ## ディレクトリ構造
 
@@ -48,6 +51,8 @@ Nuxt.jsは`pages`配下のvueファイルについて`router`を自動生成し�
 ## 記述ルール
 
 - スペースは半角
+- 文中の`()`は全角
+- 見出し3まで頭にNoをつける
 
 ## ルーティング
 
@@ -82,9 +87,3 @@ component: 'pages/user/one.vue'
 ]
 }
 ```
-
-## 参考
-
-### markdown-it
-
-https://techblog.roxx.co.jp/entry/2019/01/24/190000

@@ -52,13 +52,11 @@
 - ブラウザ（Google Chrome推奨）
 - VSCode
 
-
-[ブラウザのインストール](Environment.md)
-
-[VSコードのインストール](Environment.md)
+>* [ブラウザのインストール](Environment.md)
+>* [VSコードのインストール](Environment.md)
 
 VSCodeもしくはエディタがすでにPCに入っている方はさっそく次へGO！
 
-[HTMLの基本](STEP-1.md)
+STEP-1 -> [HTMLの基本](STEP-1.md)
 
 
