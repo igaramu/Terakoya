@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Terakoya',
+    title: 'TakumiCode',
     htmlAttrs: {
       lang: 'en'
     },
@@ -49,9 +49,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: [
-      'buefy'
-    ]
+    // vue-svg-loader
+    extend(config) {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/i
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          'vue-loader',
+          'vue-svg-loader',
+        ],
+      })
+    },
   },
 
   markdownit: {

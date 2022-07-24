@@ -1,15 +1,17 @@
 <template>
   <div id="home">
+    <Header/>
 
     <section class="top">
-      <Header/>
       <div class="top-content">
-        <h1>IgaraSystem</h1>
+        <h1>匠コード</h1>
         <p>プログラミングが１からわかる</p>
         <p>初学者向け無料マニュアル</p>
-        <b-button type="is-primary is-light">はじめる</b-button>
+        <b-button type="is-primary is-light">
+          <NuxtLink to="/selection">はじめる</NuxtLink>
+        </b-button>
         <b-button>IgaraSystemとは？</b-button>
-<!--        <div v-html="$md.render(model)">aaa</div>-->
+        <div v-html="$md.render(model2)"></div>
       </div> <!--/top-content-->
     </section>
 
@@ -18,7 +20,7 @@
       <h2>初学者を徹底サポート！</h2>
       <div class="main-content">
         <div class="left-img">
-          <img src="~/src/pose_zasetsu.png">
+          <img src="/src/main/img/pose_zasetsu.png">
         </div>
         <article>
           <div class="message">
@@ -39,25 +41,26 @@
           </div>
         </article>
         <div class="right-img">
-          <img src="~/src/pc.png">
+          <img src="/src/main/img/pc.png">
         </div>
       </div>
 
     </section> <!--/main-->
 
-
-  </div>
+  </div> <!--/home-->
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+
 import VBA_1 from '/src/vba/vba_1.md';
 import HTML_1 from '/src/vba/vba_2.md';
 import Header from '/components/Header.vue';
+import Sidebar from '/components/SideBar.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
-  components: Header,
+  components: {Header, Sidebar},
   data() {
     return {
       model: VBA_1,
@@ -71,4 +74,3 @@ export default Vue.extend({
 <style lang="scss">
 @import "style/style.scss";
 </style>
-

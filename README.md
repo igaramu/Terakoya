@@ -1,6 +1,6 @@
-# Terakoya
+# 匠コード
 
-初学者向けのプログラミング教材です。
+初学者向けのプログラミング教材(ドキュメント)です。
 
 ## コンセプト
 
@@ -31,32 +31,50 @@ $ npm run generate
 
 ## Use Library
 
-- [markdown-it](https://github.com/markdown-it/markdown-it)
-  `npm add @nuxtjs/markdownit npm install highlight.js npm install markdown-it-emoji`
-- nuxt-buefy
-- sass-loader node-sass
-
-### 参考
-markdown-it：https://techblog.roxx.co.jp/entry/2019/01/24/190000
+- マークダウンのプラグイン
+  - [markdown-it](https://github.com/markdown-it/markdown-it)
+    `npm add @nuxtjs/markdownit npm install highlight.js npm install markdown-it-emoji`
+  - https://techblog.roxx.co.jp/entry/2019/01/24/190000
+- デザイン
+  - nuxt-buefy
+- SCSSのプラグイン
+  - sass-loader node-sass
+- SVGのプラグイン
+  - [vue-svg-loader](https://github.com/visualfanatic/vue-svg-loader)
 
 ## ディレクトリ構造
 
-Nuxt.jsは`pages`配下のvueファイルについて`router`を自動生成します。
+Nuxt.jsは`pages`配下のvueファイルについて`router`を自動生成します。そのため以下のルールで進行しています。
 
-そのため以下のルールで進行します。
+- ページ基礎 -> `pages`下にページコンポーネント(vueファイル)を作成し、本文は以下のmdファイルを読み込む
+- 記事内容 -> `src`に記事(mdファイル)と画像を置く
 
-- `page`配下にページコンポーネントを作成
-- `src`に表示する記事と画像を置きます
+### 例）mdファイルの表示方法
 
-## 記述ルール
+名前を`typescript`側で定義します。
+```typescript
+import Docs from '/src/main/docs.md';
 
-- スペースは半角
-- 文中の`()`は全角
-- 見出し3まで頭にNoをつける
+Vue.extend({
+  data() {
+    return {
+      model: HTML_1
+    }
+  }
+})
+```
 
-## ルーティング
+renderで表示させます。
+```vue
+<div v-html="$md.render(model)"></div>
 
-Nuxt.jsは`pages`配下のvueファイルについて`router`を自動生成します。 以下例の場合、下のようなrouterを作成します。 ※スネークケースのファイルはエラーになります。
+```
+
+### ルーティング例
+
+以下例の場合、下のような`router`が自動生成されます。
+
+※スネークケースのファイルはエラーになります。
 
 ```html
 pages/
@@ -87,3 +105,18 @@ component: 'pages/user/one.vue'
 ]
 }
 ```
+
+## md記述ルール
+
+- スペースは半角
+- 文中の`()`は全角
+- 見出し3まで頭にNoをつける
+- h1（記事タイトル）はvueファイルに記載する
+
+
+## color
+- BFA486
+- F5EAD3
+- 95A797
+- 637B85
+![](C:/Users/igara/Downloads/i-am-sorry-by-schemecolor.png)

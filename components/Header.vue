@@ -12,17 +12,15 @@
       <b-navbar-item href="#">
         Home
       </b-navbar-item>
-      <b-navbar-item href="#">
+      <b-navbar-item href="/docs">
         Documentation
       </b-navbar-item>
-      <b-navbar-dropdown label="Info">
-        <b-navbar-item href="#">
+      <b-navbar-item label="Info">
           About
-        </b-navbar-item>
+      </b-navbar-item>
         <b-navbar-item href="#">
           Contact
         </b-navbar-item>
-      </b-navbar-dropdown>
     </template>
 
     <template #end>
